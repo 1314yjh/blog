@@ -1,1 +1,19 @@
-<H1>stud</H1>
+docker run --rm -it  -v "$(PWD):/usr/src/app" -w /usr/src/app node:20.2.0 bash
+docker run --rm -it  -v "${PWD}:/usr/src/app" -w /usr/src/app node:20.2.0 bash
+docker run --rm -it  -v ${PWD}:/usr/src/app -w /usr/src/app -p 12345:12345 -p 8000:8000 node:20.3.1 bash
+
+<p style="border:1px solid red;font-size:11px">
+在PowerShell中，${pwd}和$(pwd)是不同的。
+
+${pwd}是一种特殊语法，用于引用当前工作目录的路径，它类似于Unix和Linux shell中的$PWD变量。
+
+例如，在PowerShell中，您可以使用以下命令将当前工作目录设置为C:\Users\Username：
+
+Set-Location ${pwd}\Documents
+而$(pwd)则是一种子表达式语法，它允许您在字符串中包含运算结果。在这种情况下，$(pwd)会返回当前工作目录的路径，并将其插入到包含它的表达式中。
+
+例如，在PowerShell中，您可以使用以下命令将当前工作目录的路径添加到文本字符串中：
+
+Write-Host "The current directory is: $(pwd)"
+因此，虽然${pwd}和$(pwd)都可以用于获取当前工作目录的路径，但它们的语法和用途是不同的。
+</p>
